@@ -409,8 +409,7 @@ async def start_handler(_, message):
     ]
     reply_markup = InlineKeyboardMarkup(buttons)
 
-    await message.reply_animation(
-        animation="https://frozen-imageapi.lagendplayersyt.workers.dev/file/2e483e17-05cb-45e2-b166-1ea476ce9521.mp4",
+    await
         caption=caption,
         parse_mode=ParseMode.MARKDOWN,
         reply_markup=reply_markup
@@ -420,11 +419,11 @@ async def start_handler(_, message):
     chat_id = message.chat.id
     chat_type = message.chat.type
     if chat_type == ChatType.PRIVATE:
-        if not broadcast_collection.find_one({"chat_id": chat_id}):
-            broadcast_collection.insert_one({"chat_id": chat_id, "type": "private"})
+        if not broadcast_collection.find_one({"8367075394": chat_id}):
+            broadcast_collection.insert_one({"8367075394": chat_id, "type": "private"})
     elif chat_type in [ChatType.GROUP, ChatType.SUPERGROUP]:
         if not broadcast_collection.find_one({"chat_id": chat_id}):
-            broadcast_collection.insert_one({"chat_id": chat_id, "type": "group"})
+            broadcast_collection.insert_one({"8367075394": chat_id, "type": "group"})
 
 
 
@@ -728,14 +727,14 @@ async def process_play_command(message: Message, query: str):
         video_url, title, duration_iso, thumb = result
         if not video_url:
             await processing_message.edit(
-                "❌ Could not find the song. Try another query.\nSupport: @frozensupport1"
+                "❌ Could not find the song. Try another query.\nSupport: @Bye_artist"
             )
             return
 
         secs = isodate.parse_duration(duration_iso).total_seconds()
         if secs > MAX_DURATION_SECONDS:
             await processing_message.edit(
-                "❌ Streams longer than 15 min are not allowed. If u are the owner of this bot contact @xyz09723 to upgrade your plan"
+                "❌ Streams longer than 15 min are not allowed. If u are the owner of this bot contact @Bye_artist to upgrade your plan"
             )
             return
 
@@ -824,8 +823,8 @@ def format_time(seconds: float) -> str:
 def get_progress_bar_styled(elapsed: float, total: float, bar_length: int = 14) -> str:
     """
     Build a progress bar string in the style:
-      elapsed_time  <dashes>❄️<dashes>  total_time
-    For example: 0:30 —❄️———— 3:09
+      elapsed_time  <dashes>❤️<dashes>  total_time
+    For example: 0:30 —❤️———— 3:09
     """
     if total <= 0:
         return "Progress: N/A"
@@ -835,7 +834,7 @@ def get_progress_bar_styled(elapsed: float, total: float, bar_length: int = 14) 
         marker_index = bar_length - 1
     left = "━" * marker_index
     right = "─" * (bar_length - marker_index - 1)
-    bar = left + "❄️" + right
+    bar = left + "❤️" + right
     return f"{format_time(elapsed)} {bar} {format_time(total)}"
 
 
@@ -932,7 +931,7 @@ async def fallback_local_playback(chat_id: int, message: Message, song_info: dic
         one_line = _one_line_title(song_info["title"])
         base_caption = (
             "<blockquote>"
-            "<b>🎧 Frozen ✘ Music Streaming</b> (Local Playback)\n\n"
+            "<b>🎧 Artist ✘ Music Streaming</b> (Local Playback)\n\n"
             f"❍ <b>Title:</b> {one_line}\n"
             f"❍ <b>Requested by:</b> {song_info['requester']}"
             "</blockquote>"
@@ -1563,16 +1562,16 @@ if __name__ == "__main__":
         sys.exit(1)
 
     me = bot.get_me()
-    BOT_NAME = me.first_name or "Frozen Music"
-    BOT_USERNAME = me.username or os.getenv("BOT_USERNAME", "vcmusiclubot")
+    BOT_NAME = me.first_name or "Artist Music"
+    BOT_USERNAME = me.username or os.getenv("BOT_USERNAME", "Bye_artist")
     BOT_LINK = f"https://t.me/{BOT_USERNAME}"
 
     logger.info(f"✅ Bot Name: {BOT_NAME!r}")
     logger.info(f"✅ Bot Username: {BOT_USERNAME}")
     logger.info(f"✅ Bot Link: {BOT_LINK}")
 
-    # start the frozen‑check loop (no handler registration needed)
-    asyncio.get_event_loop().create_task(frozen_check_loop(BOT_USERNAME))
+    # start the Artist‑check loop (no handler registration needed)
+    asyncio.get_event_loop().create_task(Artist_check_loop(BOT_USERNAME))
 
     if not assistant.is_connected:
         logger.info("Assistant not connected; starting assistant client...")
