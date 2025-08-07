@@ -400,7 +400,7 @@ async def start_handler(_, message):
     buttons = [
         [
             InlineKeyboardButton(f"➕ {add_me_text}", url=f"{BOT_LINK}?startgroup=true"),
-            InlineKeyboardButton(f"📢 {updates_text}", url="https://t.me/vibeshiftbots")
+            InlineKeyboardButton(f"📢 {updates_text}", url="https://t.me/Bye_artist")
         ],
         [
             InlineKeyboardButton(f"💬 {support_text}", url="https://t.me/Bye_artist"),
@@ -455,7 +455,7 @@ async def go_back_callback(_, callback_query):
     buttons = [
         [
             InlineKeyboardButton(f"➕ {add_me_text}", url=f"{BOT_LINK}?startgroup=true"),
-            InlineKeyboardButton(f"📢 {updates_text}", url="https://t.me/vibeshiftbots")
+            InlineKeyboardButton(f"📢 {updates_text}", url="https://t.me/Bye_artist")
         ],
         [
             InlineKeyboardButton(f"💬 {support_text}", url="https://t.me/bye_artist"),
