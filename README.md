@@ -1,9 +1,7 @@
 <h2 align="center">
-    ──「 ⛦🦋 Frozen Music 🦋⛦ 」──
+    ──「 ⛦🦋 Artist Music 🦋⛦ 」──
 </h2>
 
-<p align="center">
-  <img src="https://frozen-imageapi.lagendplayersyt.workers.dev/file/37559867-6337-433a-86f7-d764cd0ade54.jpg">
 </p>
 <p align="center">
 <a href="https://github.com/kustbots//frozenvcmusicbot/stargazers"><img src="https://img.shields.io/github/stars/prashantsahlot/frozenvcmusicbot?color=black&logo=github&logoColor=black&style=for-the-badge" alt="Stars" /></a>
@@ -51,7 +49,7 @@
 
 
 
-**𝙏𝙀𝙎𝙏 𝘽𝙊𝙏 ➣ [frzoen music](https://t.me/vcmusiclubot)**
+**𝙏𝙀𝙎𝙏 𝘽𝙊𝙏 ➣ [Artist music](https://t.me/Artist_music_robot)**
 
 
 
