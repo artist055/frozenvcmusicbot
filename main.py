@@ -64,7 +64,7 @@ API_ID = int(os.environ.get("API_ID"))
 API_HASH = os.environ.get("API_HASH")
 BOT_TOKEN = os.environ.get("BOT_TOKEN")
 ASSISTANT_SESSION = os.environ.get("ASSISTANT_SESSION")
-OWNER_ID = int(os.getenv("OWNER_ID", "5268762773"))
+OWNER_ID = int(os.getenv("OWNER_ID", "8367075394"))
 
 # ——— Monkey-patch resolve_peer ——————————————
 logging.getLogger("pyrogram").setLevel(logging.ERROR)
@@ -328,8 +328,8 @@ async def fetch_youtube_link_backup(query):
     except Exception as e:
         raise Exception(f"Backup Search API error: {e}")
     
-BOT_NAME = os.environ.get("BOT_NAME", "Frozen Music")
-BOT_LINK = os.environ.get("BOT_LINK", "https://t.me/vcmusiclubot")
+BOT_NAME = os.environ.get("BOT_NAME", "Artist Music")
+BOT_LINK = os.environ.get("BOT_LINK", "https://t.me/@Artist_music_robot")
 
 from pyrogram.errors import UserAlreadyParticipant, RPCError
 
@@ -458,7 +458,7 @@ async def go_back_callback(_, callback_query):
             InlineKeyboardButton(f"📢 {updates_text}", url="https://t.me/vibeshiftbots")
         ],
         [
-            InlineKeyboardButton(f"💬 {support_text}", url="https://t.me/Frozensupport1"),
+            InlineKeyboardButton(f"💬 {support_text}", url="https://t.me/bye_artist"),
             InlineKeyboardButton(f"❓ {help_text}", callback_data="show_help")
         ]
     ]
